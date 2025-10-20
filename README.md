@@ -135,7 +135,7 @@ cp .env.example .env
 
 3. **Start required services:**
    - Start Temporal server (see [Temporal docs](https://docs.temporal.io/dev-guide/))
-   - Start Ollama with your preferred model (e.g., `ollama run llama3.2:1b`)
+   - Start Ollama with your preferred model (e.g., `ollama run gemma:2b`)
    - Start Mockoon with the configuration from the `mockoon` folder (import the JSON config file into Mockoon and start the mock API on port 3233)
 
 4. **Launch the application:**
@@ -223,12 +223,3 @@ We welcome contributions to improve this demo! Here's how you can help:
 - Update documentation for any new features
 - Ensure all tests pass before submitting
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Copyright (c) 2025 Darshit Vora
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
