@@ -19,7 +19,7 @@ tab = st.tabs(["Submit", "Review", "Workflows"])
 with tab[0]:
     with st.form("submit_form"):
         applicant_id = st.text_input("Applicant ID", "12345")
-        name = st.text_input("Name", "Darshit")
+        name = st.text_input("Name", "Subhadip")
         amount = st.number_input("Loan amount", value=5000.0)
         income = st.number_input("Declared income", value=6000.0)
         expenses = st.number_input("Monthly expenses", value=2000.0)

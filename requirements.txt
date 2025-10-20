@@ -8,3 +8,4 @@ python-dotenv>=1.0.0
 strands-agents
 strands-agents-tools
 ollama
+python-dotenv

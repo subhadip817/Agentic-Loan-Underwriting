@@ -200,7 +200,7 @@ async def aggregate_and_decide(payload: Dict[str, Any]) -> Dict[str, Any]:
     try:
         ollama_model = OllamaModel(
             host=os.getenv("OLLAMA_URL", "http://localhost:11434"),
-            model_id=os.getenv("OLLAMA_MODEL", "llama3:latest")
+            model_id=os.getenv("OLLAMA_MODEL", "gemma:2b")
         )
         agent = Agent(model=ollama_model)
 

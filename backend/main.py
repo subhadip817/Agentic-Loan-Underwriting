@@ -6,6 +6,7 @@ from temporalio.client import Client
 import os
 from dotenv import load_dotenv
 from typing import Optional
+import uuid
 
 load_dotenv()
 
@@ -18,7 +19,7 @@ TASK_QUEUE = os.getenv("TEMPORAL_TASK_QUEUE", "loan-underwriter-queue")
 try:
     ollama_model = OllamaModel(
         host=os.getenv("OLLAMA_URL", "http://127.0.0.1:11434"),
-        model_id=os.getenv("OLLAMA_MODEL", "llama3.2:1b")  # Use faster model
+        model_id=os.getenv("OLLAMA_MODEL", "gemma:2b")  # Use faster model
     )
     strands_agent = Agent(model=ollama_model)
     strands_enabled = True
@@ -63,7 +64,7 @@ async def submit_application(app_data: dict):
         handle = await client.start_workflow(
             "SupervisorWorkflow",
             validated_data.model_dump(),
-            id=f"loan-{validated_data.applicant_id}",
+            id=f"loan-{validated_data.applicant_id}-{uuid.uuid4()}",
             task_queue=TASK_QUEUE,
         )
         print(f"Workflow started: {handle.id}")
